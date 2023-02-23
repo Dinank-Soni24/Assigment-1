@@ -19,6 +19,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 //set view engine
 app.set("view engine", "ejs");
+app.use(express.static('node_modules'));
 // app.set("views",path.resolve(__dirname,"views/ejs"))
 
 //load assets

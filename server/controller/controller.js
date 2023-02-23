@@ -19,7 +19,8 @@ exports.create = (req, res) => {
     course
         .save(course)
         .then(data => {
-            res.send(data)
+            // res.send(data)
+            res.redirect('/add-course')
         })
         .catch(err => {
             res.status(500).send({
@@ -50,6 +51,7 @@ exports.update = (req, res) => {
     }
 
     const id = req.params.id;
+    console.log(id);
     CRUD.findByIdAndUpdate(id,req.body,{ useFindAndModify: false })
     .then(data => {
         if(!data){

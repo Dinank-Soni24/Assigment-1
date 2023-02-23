@@ -16,5 +16,11 @@ exports.add_course = (req, res) => {
 }
 
 exports.update_course = (req, res) => {
-    res.render('update_course');
+    axios.get('http://localhost:3000/api/course',{ params : { id : req.query.id }})
+        .then(function(coursedata){
+            res.render("update_course",{ course: coursedata.data});
+        })
+        .catch(err =>{
+            res.send(err);
+        })
 }
