@@ -11,14 +11,14 @@ const controller = require('../controller/controller');
 route.get('/',services.homeRoutes );
 
 /**
- *  @description add users
- *  @method GET /add-user
+ *  @description add course
+ *  @method GET /add-course
  */
 route.get('/add-course', services.add_course);
 
 /**
- *  @description for update user
- *  @method GET /update-user
+ *  @description for update course
+ *  @method GET /update-course
  */
 route.get('/update-course', services.update_course);
 
